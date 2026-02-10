@@ -1,26 +1,34 @@
 @import "tailwindcss";
 
+/* Brand palette: Vigyapun Limitless logo (yellow, black, white) */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #ffffff; /* clean white */
+  --foreground: #111111; /* near black for strong contrast */
 }
 
 @theme inline {
+  /* Brand colors exposed as Tailwind tokens (bg-brand-yellow, text-brand-black, etc.) */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-brand-yellow: #f4d63b; /* primary yellow from logo */
+  --color-brand-yellow-dark: #c29f00; /* deeper yellow for contrast and focus */
+  --color-brand-black: #111111;
+  --color-brand-cream: #fffdf6; /* subtle off-white for sections/nav */
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #020617;
+    --foreground: #e5e7eb;
   }
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
 }
